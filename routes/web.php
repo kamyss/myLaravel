@@ -31,6 +31,11 @@ Route::group(['prefix'=>'user'],function(){
     Route::get('userShow3',['as'=>'userShow3','uses'=>$controller.'userShow3']);
     Route::post('verifyTest',['as'=>'verifyTest','uses'=>$controller.'verifyTest']);
 });
+Route::group(['prefix'=>'queue'],function(){
+    $controller='queueController@';
+    Route::get('index',['as'=>'index','uses'=>$controller.'index']);
+    Route::get('advanceTest',['as'=>'advanceTest','uses'=>$controller.'advanceTest']);
+});
 
 
 
