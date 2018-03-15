@@ -17,6 +17,7 @@ class VerifyCsrfToken extends BaseVerifier
     public function handle($request, Closure $next)
     {
         // 使用CSRF
+        //dd('这是csrf的那个中间件');
         //return parent::handle($request, $next);
         // 禁用CSRF
         return $next($request);

@@ -34,7 +34,9 @@ Route::group(['prefix'=>'user'],function(){
 Route::group(['prefix'=>'queue'],function(){
     $controller='queueController@';
     Route::get('index',['as'=>'index','uses'=>$controller.'index']);
-    Route::get('advanceTest',['as'=>'advanceTest','uses'=>$controller.'advanceTest']);
+    Route::get('advanceTest',['as'=>'advanceTest','uses'=>$controller.'advanceTest'])->middleware('myRouteWare');
+    Route::post('advanceTest',['as'=>'advanceTest','uses'=>$controller.'advanceTest'])->middleware('myRouteWare');
+    //如果想分配多个中间件可以用（'first','second'）这种形式同时验证
 });
 
 
